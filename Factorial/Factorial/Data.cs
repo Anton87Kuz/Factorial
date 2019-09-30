@@ -8,19 +8,30 @@ namespace Factorial.Factorial
 {
     public class Data
     {
-        private int _value=1;
+        private int _value { get; set; }
 
+        public Data(int value)
+        {
+            _value = value;
+        }
 
-        public int Set(int n, int prev)
+        public int GetValue()
+        {
+            return _value;
+        }
+
+        public int MultOnInt(int mult, int prev)
         {
             
-            var temp = _value * n + prev;
+            var temp = _value * mult + prev;
             _value = temp % 100;
             return (temp / 100);
         }
 
+        
 
-        public void Show(bool flag)
+
+        public void Display(bool flag)
         {
             if (_value < 10)
             {
